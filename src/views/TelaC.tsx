@@ -3,10 +3,15 @@ import { Text, View } from 'react-native'
 import TextoCentral from '../components/TextoCentral'
 
 export default (props: any) => {
-    const route = props.route || { params: { numero: 0 } }
+    const r = props.route
+    const numero = r.route 
+        && r.route.params 
+        && r.route.params.numero 
+        ? r.route.params.numero 
+        : 0
     return (
         <TextoCentral corFundo='#9932cd'>
-            Tela C = {route.params.numero}
+            Tela C = {numero}
         </TextoCentral>
     )
 }
