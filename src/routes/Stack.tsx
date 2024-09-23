@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 
 export default (props: any) => {
     return (
-        <Stack.Navigator initialRouteName="TelaA" screenOptions={{ headerShown: true }}>
+        <Stack.Navigator initialRouteName="TelaA" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="TelaA" 
                 options={{ title: "Info Iniciais" }}
             >
@@ -21,12 +21,18 @@ export default (props: any) => {
             </Stack.Screen>
             <Stack.Screen name="TelaB" >
                 {(props: any) => (
-                    <PassoStack {...props} avancar="TelaC">
+                    <PassoStack {...props} avancar="TelaC" voltar>
                         <TelaB/>
                     </PassoStack>
                 )}
             </Stack.Screen>
-            <Stack.Screen name="TelaC" component={TelaC} ></Stack.Screen>
+            <Stack.Screen name="TelaC" >
+                {(props: any) => (
+                    <PassoStack {...props} voltar>
+                        <TelaC/>
+                    </PassoStack>
+                )}
+            </Stack.Screen>
         </Stack.Navigator>
     )
 }
