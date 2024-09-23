@@ -21,14 +21,14 @@ export default (props: any) => {
             </Stack.Screen>
             <Stack.Screen name="TelaB" >
                 {(props: any) => (
-                    <PassoStack {...props} avancar="TelaC" voltar>
+                    <PassoStack {...props} voltar avancar="TelaC">
                         <TelaB/>
                     </PassoStack>
                 )}
             </Stack.Screen>
             <Stack.Screen name="TelaC" >
                 {(props: any) => (
-                    <PassoStack {...props} voltar>
+                    <PassoStack {...props} voltar avancar="TelaC">
                         <TelaC/>
                     </PassoStack>
                 )}

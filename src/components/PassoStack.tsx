@@ -31,3 +31,6 @@ export default (props: any) => {
         </View>
     )
 }
+
+// props.navigation.navigate(props.avancar)
+// props.navigation.push(props.avancar) Adicionar a tela na stack mesmo a tela já estando nela
