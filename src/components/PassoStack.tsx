@@ -19,7 +19,9 @@ export default (props: any) => {
                     ?   <Button 
                             title="Avançar"
                             onPress={() => {
-                                props.navigation.navigate(props.avancar)
+                                props.navigation.push(props.avancar, {
+                                    numero: parseInt(`${Math.random() * 100}`)
+                                })
                             }}
                         />
                     : false
